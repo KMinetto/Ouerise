@@ -13,9 +13,12 @@ import './bootstrap';
 
 import Vue from 'vue';
 
+import Home from './components/Home'
+
 new Vue({
     el: '#app',
-    data: {
-        message: 'Hello Vue !'
-    }
+    components: {Home},
+
+    template: '<Home/>'
 })
+
