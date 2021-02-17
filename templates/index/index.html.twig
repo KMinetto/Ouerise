@@ -1,13 +1,39 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 
 {% block body %}
-{#    {% verbatim %}#}
-{#      <div id="app">#}
-{#        {{ message }}#}
-{#      </div>#}
-{#    {% endverbatim %}#}
-    <a href="{{ path('lieu', {'id': '1'}) }}">Palais Idéal du Facteur Cheval</a>
-{#    <a href="/lieu/arc de triomphe">Arc de triomphe</a>#}
+	<nav class="navbar navbar-light">
+		<div class="container-fluid">
+			<a class="navbar-brand">Ouerise</a>
+			<form class="d-flex input-group w-auto">
+				<input type="search" class="form-control" placeholder="Recherche" aria-label="Search"/>
+				<button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+					Recherche
+				</button>
+			</form>
+		</div>
+	</nav>
+
+	<section>
+		<div class="d-flex flex-column mb-3">
+			<div class="p-2">Résultats 1</div>
+			<div class="p-2">Résultats 2</div>
+			<div class="p-2">Résultats 3</div>
+		</div>
+		<div class="d-flex flex-column-reverse">
+			<div class="p-2">Résultats 1</div>
+			<div class="p-2">Résultats 2</div>
+			<div class="p-2">Résultats 3</div>
+		</div>
+	</section>
+
+
+	{#    {% verbatim %}#}
+	{#      <div id="app">#}
+	{#        {{ message }}#}
+	{#      </div>#}
+	{#    {% endverbatim %}#}
+		<a href="{{ path('lieu', {'id': '1'}) }}"> Palais Idéal du Facteur Cheval</a>
+	{#    <a href="/lieu/arc de triomphe">Arc de triomphe</a>#}
 {% endblock %}

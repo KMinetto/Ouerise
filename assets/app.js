@@ -19,3 +19,4 @@ new Vue({
         message: 'Hello Vue !'
     }
 })
+
