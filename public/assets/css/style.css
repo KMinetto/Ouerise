@@ -25,18 +25,14 @@ button {
 }
 
 .rectangle {
-    width: 1200px;
-    height: 200px;
+    display: flex;
+    border-radius: 6px;
     background: #B0B9AA;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .texte {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
     text-align: justify;
 }
 
@@ -56,18 +52,33 @@ h3 {
 .dim{
     width: 300px;
     height: auto;
-    border: 2px solid white;
+    border: 2px solid white !important;
+
 }
 
 @media(max-width: 1000px) {
+    nav
+    {
+        width: auto;
+        text-align: left;
+    }
+
     .logo {
         position: fixed;
+        margin-bottom:10%;
     }
+
     .rectangle{
         width: auto;
         height: auto;
     }
-
-
-
+    .img{
+        width: auto;
+        height: auto;
+    }
+    .texte{
+        width: auto;
+        height: auto;
+    }
+    
 }

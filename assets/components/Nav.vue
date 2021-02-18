@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-light">
       <div class="container-fluid">
-          <img src="/assets/img/OueriseBlanc.png" alt="logo" class="logo">
+          <img src="/assets/img/OueriseBlanc.png"  alt="logo" class="logo">
         <a class="navbar-brand"><h1>Ouerise
             </h1></a>
         <form class="d-flex input-group w-auto">
