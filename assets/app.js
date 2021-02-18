@@ -19,14 +19,16 @@ import Nav from './components/Nav'
 
 new Vue({
     el: '#app',
-    components: {Home},
+    components: { Home },
 
     template: '<Home/>'
 });
 
 new Vue({
     el: '#nav',
-    components: {Nav},
+    components: { Nav },
 
     template: '<Nav/>'
 });
+
+
