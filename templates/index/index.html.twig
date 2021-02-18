@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 
 {% block body %}
-
-    {% for location in locations %}
-        <div class="col-12">
-            <a href="{{ path('lieu', {'id': location.id}) }}">{{ location.name }}</a>
-        </div>
-    {% endfor %}
+	{#    {% verbatim %}#}
+	{#      <div id="app">#}
+	{#        {{ message }}#}
+	{#      </div>#}
+	{#    {% endverbatim %}#}
+	{# <a href="{{ path('lieu', {'id': '1'}) }}">Palais Idéal du Facteur Cheval</a> #}
+	{#    <a href="/lieu/arc de triomphe">Arc de triomphe</a>#}<div id="app"> </div>
 
 {% endblock %}

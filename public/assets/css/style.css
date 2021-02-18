@@ -1,0 +1,27 @@
+nav{
+    background-color: #C49D83;
+}
+
+body{
+    background-color: #F5EFE6;
+}
+
+button{
+    background-color: white !important;
+}
+
+.rectangle{
+	width:1200px;
+	height:200px;
+	background:#B0B9AA;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.texte{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}

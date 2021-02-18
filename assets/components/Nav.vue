@@ -1,0 +1,52 @@
+<template>
+  <div>
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+          <img src="'../../assets/img/OueriseBlanc.png'" alt="logo">
+        <a class="navbar-brand">Ouerise</a>
+        <form class="d-flex input-group w-auto">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Recherche"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            data-mdb-ripple-color="dark"
+          >
+            Recherche
+          </button>
+        </form>
+      </div>
+    </nav>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Nav",
+  data() {
+    return {
+      message: "",
+    };
+  },
+
+  mounted() {
+    console.log("testNav");
+    this.test();
+  },
+
+  methods: {
+    test() {
+      this.message = "";
+    },
+  },
+};
+</script>
+
+<style>
+</style>
+
+
