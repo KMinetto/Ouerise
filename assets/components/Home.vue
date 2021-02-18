@@ -6,37 +6,43 @@
           <div class="p-2 rectangle">
             <div class="texte">
               <h3>{{ message }}</h3>
-              {{ message }} <img src="" alt="" />
+              <p>{{ message }}</p>
+              <img src="" alt="" />
             </div>
           </div>
           <div class="p-2 rectangle">
             <div class="texte">
               <h3>{{ message }}</h3>
-              {{ message }} <img src="" alt="" />
+              <p>{{ message }}</p>
+              <img src="" alt="" />
             </div>
           </div>
           <div class="p-2 rectangle">
             <div class="texte">
               <h3>{{ message }}</h3>
-              {{ message }} <img src="" alt="" />
+              <p>{{ message }}</p>
+              <img src="" alt="" />
             </div>
           </div>
           <div class="p-2 rectangle">
             <div class="texte">
               <h3>{{ message }}</h3>
-              {{ message }} <img src="" alt="" />
+              <p>{{ message }}</p>
+              <img src="" alt="" />
             </div>
           </div>
           <div class="p-2 rectangle">
             <div class="texte">
               <h3>{{ message }}</h3>
-              {{ message }} <img src="" alt="" />
+              <p>{{ message }}</p>
+              <img src="" alt="" />
             </div>
           </div>
           <div class="p-2 rectangle">
             <div class="texte">
               <h3>{{ message }}</h3>
-              {{ message }} <img src="" alt="" />
+              <p>{{ message }}</p>
+              <img src="" alt="" />
             </div>
           </div>
         </div>
