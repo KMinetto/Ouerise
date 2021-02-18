@@ -14,7 +14,11 @@ import './bootstrap';
 import Vue from 'vue';
 
 import Home from './components/Home'
+import Location from './components/Location'
+import Map from './components/Map'
 
+
+// Affichage de la page d'index 
 new Vue({
     el: '#app',
     components: {Home},
@@ -22,3 +26,18 @@ new Vue({
     template: '<Home/>'
 })
 
+// Affichage de la page d'un lieu
+new Vue({
+    el: '#location',
+    components: {Location},
+
+    template: '<Location/>'
+})
+
+// Affichage de la map dans la page d'un lieu
+new Vue({
+    el: '#map',
+    components: {Map},
+
+    template: '<Map/>'
+})
