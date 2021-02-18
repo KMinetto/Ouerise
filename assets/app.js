@@ -19,12 +19,26 @@ import Map from './components/Map'
 
 import Nav from './components/Nav'
 
-new Vue({
-    el: '#app',
-    components: { Home },
+// new Vue({
+//     el: '#app',
+//     components: { Home },
 
+//     template: '<Home/>'
+// });
+
+new Vue({
+    render(h) {
+        return h(Home, {
+            props: {
+                name: this.$el.getAttribute('name'),
+                desc: this.$el.getAttribute('desc'),
+                img: this.$el.getAttribute('img'),
+            }
+        })
+    },
     template: '<Home/>'
-});
+}).$mount('#app')
+
 
 new Vue({
     el: '#nav',
