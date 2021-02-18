@@ -3,6 +3,7 @@
 {% block title %}Lieu{% endblock %}
 
 {% block body %}
+    {{ dump(data) }}
     <p> {{ data.query }} </p>
     <p>Latitude : {{ latitude }} </p>
     <p>Longitude : {{ longitude }} </p>
