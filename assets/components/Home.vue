@@ -20,58 +20,6 @@
             </div>
           </div>
         </div>
-
-        <div class="p-5 rectangle">
-          <div class="texte">
-            <div class="col-12 d-flex">
-              <div class="col-8">
-                <h3>{{ message }}</h3>
-                <p>{{ message }}</p>
-              </div>
-              <div class="col-4">
-                <img
-                  class="img-fluid dim ms-4"
-                  src="/assets/img/palaisFacteur.jpg"
-                  alt="palais"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="p-5 rectangle">
-          <div class="texte">
-            <div class="col-12 d-flex">
-              <div class="col-8">
-                <h3>{{ message }}</h3>
-                <p>{{ message }}</p>
-              </div>
-              <div class="col-4">
-                <img
-                  class="img-fluid dim ms-4"
-                  src="/assets/img/palaisFacteur.jpg"
-                  alt="palais"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="p-5 rectangle">
-          <div class="texte">
-            <div class="col-12 d-flex">
-              <div class="col-8">
-                <h3>{{ message }}</h3>
-                <p>{{ message }}</p>
-              </div>
-              <div class="col-4">
-                <img
-                  class="img-fluid dim ms-4"
-                  src="/assets/img/palaisFacteur.jpg"
-                  alt="palais"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </div>
