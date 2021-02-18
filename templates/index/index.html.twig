@@ -3,11 +3,11 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-{#    {% verbatim %}#}
-{#      <div id="app">#}
-{#        {{ message }}#}
-{#      </div>#}
-{#    {% endverbatim %}#}
-    <a href="{{ path('lieu', {'id': '1'}) }}">Palais Idéal du Facteur Cheval</a>
-{#    <a href="/lieu/arc de triomphe">Arc de triomphe</a>#}
+
+    {% for location in locations %}
+        <div class="col-12">
+            <a href="{{ path('lieu', {'id': location.id}) }}">{{ location.name }}</a>
+        </div>
+    {% endfor %}
+
 {% endblock %}

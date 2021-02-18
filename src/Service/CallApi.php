@@ -20,7 +20,7 @@ class CallApi {
      * @param $lieu
      * @return string[]
      */
-    public function getApiLieu($lieu) : array {
+    public function getApiLocation($lieu) : array {
         return $this->getApiData('?q=' . $lieu);
     }
 
