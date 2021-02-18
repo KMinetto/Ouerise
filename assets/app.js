@@ -17,14 +17,22 @@ import Home from './components/Home'
 import Location from './components/Location'
 import Map from './components/Map'
 
+import Nav from './components/Nav'
 
-// Affichage de la page d'index 
 new Vue({
     el: '#app',
-    components: {Home},
+    components: { Home },
 
     template: '<Home/>'
-})
+});
+
+new Vue({
+    el: '#nav',
+    components: { Nav },
+
+    template: '<Nav/>'
+});
+
 
 // Affichage de la page d'un lieu
 new Vue({
