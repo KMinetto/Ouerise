@@ -58,3 +58,16 @@ h3 {
     height: auto;
     border: 2px solid white;
 }
+
+@media(max-width: 1000px) {
+    .logo {
+        position: fixed;
+    }
+    .rectangle{
+        width: auto;
+        height: auto;
+    }
+
+
+
+}
