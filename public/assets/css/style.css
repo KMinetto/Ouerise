@@ -1,24 +1,38 @@
-nav{
-    background-color: #C49D83;
-}
-
-body{
+body {
     background-color: #F5EFE6;
 }
 
-button{
+.card {
+    background-color: #B0B9AA;
+}
+
+nav {
+    background-color: #C49D83;
+}
+
+button {
+    color: #B0B9AA !important;
+    border-color: #B0B9AA !important;
+    margin-left: 5px !important;
+}
+
+body {
+    background-color: #F5EFE6;
+}
+
+button {
     background-color: white !important;
 }
 
-.rectangle{
-	width:1200px;
-	height:200px;
-	background:#B0B9AA;
+.rectangle {
+    width: 1200px;
+    height: 200px;
+    background: #B0B9AA;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.texte{
+.texte {
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -26,19 +40,15 @@ button{
     text-align: justify;
 }
 
-.logo{
+.logo {
     width: 200px;
     height: auto;
 }
 
-h1{
+h1 {
     color: white;
 }
 
-h3{
+h3 {
     color: white;
-}
-
-p{
-    
 }
