@@ -23,7 +23,7 @@
 				</div>
 			</div>
 
-			<div id="map" class="col-sm-5 offset-1 card" v-bind:latitude-map="latitude"></div>
+			<div id="map" class="col-sm-5 offset-1 card" v-bind:latitude-map="latitude" v-bind:longitude-map="longitude"></div>
 
 		</div>
 	</div>
@@ -33,7 +33,10 @@
 <script>
 export default {
     name: 'Location',
-    props: ['latitude'],
+    props: [
+        'latitude',
+        'longitude'
+    ],
     data(){
         return {
             message: ''
@@ -42,6 +45,7 @@ export default {
 
     mounted(){
         console.log(this.latitude);
+        console.log(this.longitude);
         this.test();
     },
 

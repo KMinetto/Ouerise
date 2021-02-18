@@ -46,7 +46,8 @@ new Vue({
     render(h) {
         return h(Location, {
             props: {
-                latitude: this.$el.getAttribute('latitude')
+                latitude: this.$el.getAttribute('latitude'),
+                longitude: this.$el.getAttribute('longitude'),
             }
         })
     },
@@ -65,7 +66,8 @@ new Vue({
     render(h) {
         return h(Map, {
             props: {
-                latitude: this.$el.getAttribute('latitude-map')
+                latitude: this.$el.getAttribute('latitude-map'),
+                longitude: this.$el.getAttribute('longitude-map'),
             }
         })
     },

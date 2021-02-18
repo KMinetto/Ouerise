@@ -9,7 +9,10 @@
 <script>
 export default {
   name: "Map",
-    props: ['latitude'],
+    props: [
+        'latitude',
+        'longitude'
+    ],
   data() {
     return {
       map: null,
@@ -20,6 +23,7 @@ export default {
 
   mounted() {
     console.log("Depuis map : " + this.latitude)
+    console.log("Depuis map : " + this.longitude)
     this.initMap();
     // this.initLayers();
   },
