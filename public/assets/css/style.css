@@ -52,3 +52,9 @@ h1 {
 h3 {
     color: white;
 }
+
+.dim{
+    width: 300px;
+    height: auto;
+    border: 2px solid white;
+}

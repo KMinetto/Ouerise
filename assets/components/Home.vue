@@ -5,44 +5,71 @@
         <div class="d-flex flex-column mb-3">
           <div class="p-2 rectangle">
             <div class="texte">
-              <h3>{{ message }}</h3>
-              <p>{{ message }}</p>
-              <img src="" alt="" />
+              <div class="col-12 d-flex">
+                <div class="col-8">
+                  <h3>{{ message }}</h3>
+                  <p>{{ message }}</p>
+                </div>
+                <div class="col-4">
+                  <img
+                    class="dim"
+                    src="/assets/img/palaisFacteur.jpg"
+                    alt="palais"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2 rectangle">
+            <div class="texte">
+              <div class="col-12 d-flex">
+                <div class="col-8">
+                  <h3>{{ message }}</h3>
+                  <p>{{ message }}</p>
+                </div>
+                <div class="col-4">
+                  <img
+                    class="dim"
+                    src="/assets/img/palaisFacteur.jpg"
+                    alt="palais"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div class="p-2 rectangle">
             <div class="texte">
-              <h3>{{ message }}</h3>
-              <p>{{ message }}</p>
-              <img src="" alt="" />
+              <div class="col-12 d-flex">
+                <div class="col-8">
+                  <h3>{{ message }}</h3>
+                  <p>{{ message }}</p>
+                </div>
+                <div class="col-4">
+                  <img
+                    class="dim"
+                    src="/assets/img/palaisFacteur.jpg"
+                    alt="palais"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div class="p-2 rectangle">
             <div class="texte">
-              <h3>{{ message }}</h3>
-              <p>{{ message }}</p>
-              <img src="" alt="" />
-            </div>
-          </div>
-          <div class="p-2 rectangle">
-            <div class="texte">
-              <h3>{{ message }}</h3>
-              <p>{{ message }}</p>
-              <img src="" alt="" />
-            </div>
-          </div>
-          <div class="p-2 rectangle">
-            <div class="texte">
-              <h3>{{ message }}</h3>
-              <p>{{ message }}</p>
-              <img src="" alt="" />
-            </div>
-          </div>
-          <div class="p-2 rectangle">
-            <div class="texte">
-              <h3>{{ message }}</h3>
-              <p>{{ message }}</p>
-              <img src="" alt="" />
+              <div class="col-12 d-flex">
+                <div class="col-8">
+                  <h3>{{ message }}</h3>
+                  <p>{{ message }}</p>
+                </div>
+                <div class="col-4">
+                  <img
+                    class="dim"
+                    src="/assets/img/palaisFacteur.jpg"
+                    alt="palais"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
