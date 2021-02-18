@@ -2,8 +2,9 @@
   <div>
     <nav class="navbar navbar-light">
       <div class="container-fluid">
-          <img src="'../../assets/img/OueriseBlanc.png'" alt="logo">
-        <a class="navbar-brand">Ouerise</a>
+          <img src="/assets/img/OueriseBlanc.png"  alt="logo" class="logo">
+        <a class="navbar-brand"><h1>Ouerise
+            </h1></a>
         <form class="d-flex input-group w-auto">
           <input
             type="search"
@@ -12,7 +13,7 @@
             aria-label="Search"
           />
           <button
-            class="btn btn-outline-primary"
+            class="btn btn-outline button"
             type="button"
             data-mdb-ripple-color="dark"
           >
