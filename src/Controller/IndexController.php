@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Service\CallApi;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class IndexController extends AbstractController
@@ -16,27 +17,35 @@ class IndexController extends AbstractController
      */
     public function index(CallApi $callApiServices): Response
     {
+        return new Response($this->renderView('index/index.html.twig'));
+    }
+
+    /**
+     * @Route ("/index_json", name="index_json")
+     * @return JsonResponse
+     */
+    public function autrement() :JsonResponse {
         $locations = $this->getDoctrine()->getRepository('App:Location')
             ->findAll();
-        $names = 'Nom-inconnue';
-        $description = 'Description-inconnue';
-        $img = 'Image-inconnue.jpg';
 
-//        foreach ($locations as $location) {
-//            $names[] = $callApiServices->getApiLocation($location->getName());
-//        }
+        $response = new JsonResponse();
 
-//        foreach ($locations as $location) {
-//            $datas[] = $callApiServices->getApiLocation($location->getName());
-//            $datas[] = $callApiServices->getApiLocation($location->getLatitude());
-//            $datas[] = $callApiServices->getApiLocation($location->getLongitude());
-//        }
+        $datas = [];
 
-        return $this->render('index/index.html.twig', [
-            'name' => $names,
-            'desc' => $description,
-            'img' => $img,
-            'locations' => $locations,
+        foreach ($locations as $location) {
+            $datas[] = array(
+                'name' => $location->getName(),
+                'description' => $location->getDescription(),
+                'img' => $location->getImg(),
+            );
+//            $description = $location->getDescription();
+//            $img = $location->getImg();
+        }
+
+        $response->setData([
+            'datas' => $datas
         ]);
+
+        return $response;
     }
 }

@@ -30,9 +30,9 @@ new Vue({
     render(h) {
         return h(Home, {
             props: {
-                name: this.$el.getAttribute('name'),
-                desc: this.$el.getAttribute('desc'),
-                img: this.$el.getAttribute('img'),
+                names: this.$el.getAttribute('names'),
+                // desc: this.$el.getAttribute('desc'),
+                // img: this.$el.getAttribute('img'),
             }
         })
     },
