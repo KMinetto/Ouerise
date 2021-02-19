@@ -20,12 +20,26 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 
 
-new Vue({
-    el: '#app',
-    components: { Home },
+// new Vue({
+//     el: '#app',
+//     components: { Home },
 
+//     template: '<Home/>'
+// });
+
+new Vue({
+    render(h) {
+        return h(Home, {
+            props: {
+                names: this.$el.getAttribute('names'),
+                // desc: this.$el.getAttribute('desc'),
+                // img: this.$el.getAttribute('img'),
+            }
+        })
+    },
     template: '<Home/>'
-});
+}).$mount('#app')
+
 
 // Affichage de NavBar
 
@@ -38,18 +52,43 @@ new Vue({
 
 
 // Affichage de la page d'un lieu
-new Vue({
-    el: '#location',
-    components: {Location},
+// new Vue({
+//     el: '#location',
+//     components: {Location},
+//     props: ['latitude'],
+//     template: '<Location/>'
+// })
 
+new Vue({
+    render(h) {
+        return h(Location, {
+            props: {
+                latitude: this.$el.getAttribute('latitude'),
+
+                longitude: this.$el.getAttribute('longitude'),
+            }
+        })
+    },
     template: '<Location/>'
-})
+}).$mount('#location')
 
 // Affichage de la map dans la page d'un lieu
-new Vue({
-    el: '#map',
-    components: {Map},
+// new Vue({
+//     el: '#map',
+//     components: {Map},
+//
+//     template: '<Map/>'
+// })
 
+new Vue({
+    render(h) {
+        return h(Map, {
+            props: {
+                latitude: this.$el.getAttribute('latitude-map'),
+                longitude: this.$el.getAttribute('longitude-map'),
+            }
+        })
+    },
     template: '<Map/>'
 })
 

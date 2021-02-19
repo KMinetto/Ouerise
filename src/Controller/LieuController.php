@@ -21,9 +21,12 @@ class LieuController extends AbstractController
     public function index(CallApi $callApiServices, int $id): Response
     {
         $location = $this->getOneLocation($id);
-
+        $latitude = $this->getOneLocationLatitude($id);
+        $longitude = $this->getOneLocationLongitude($id);
         return $this->render('lieu/index.html.twig', [
-            'data' => $callApiServices->getApiLieu($location)
+            'data' => $callApiServices->getApiLocation($location),
+            'latitude' => $latitude,
+            'longitude' => $longitude
         ]);
     }
 
@@ -39,4 +42,33 @@ class LieuController extends AbstractController
 
         return $location->getName();
     }
+
+
+    public function getOneLocationLatitude($id): ?string
+    {
+        $location = $this->getDoctrine()
+            ->getRepository('App:Location')
+            ->find($id);
+
+        if (!$location) {
+            throw $this->createNotFoundException('Aucun lieu n\'a été trouvé :cry:');
+        }
+
+        return $location->getLatitude();
+    }
+
+    public function getOneLocationLongitude($id): ?string
+    {
+        $location = $this->getDoctrine()
+            ->getRepository('App:Location')
+            ->find($id);
+
+        if (!$location) {
+            throw $this->createNotFoundException('Aucun lieu n\'a été trouvé :cry:');
+        }
+
+        return $location->getLongitude();
+    }
+
+
 }
