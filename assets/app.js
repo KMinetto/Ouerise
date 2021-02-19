@@ -90,7 +90,7 @@ new Vue({
         })
     },
     template: '<Map/>'
-})
+}).$mount('#map')
 
 // Affichage du footer
 new Vue({
