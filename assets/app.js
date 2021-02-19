@@ -30,7 +30,6 @@ new Vue({
     render(h) {
         return h(Home, {
             props: {
-                prop: []= locations,
                 name: this.$el.getAttribute('name'),
                 desc: this.$el.getAttribute('desc'),
                 img: this.$el.getAttribute('img'),
