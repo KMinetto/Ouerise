@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- Footer -->
-    <footer class="border text-center text-lg-start">
+    <footer class="text-center text-lg-start">
       <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                <a class="text-dark" href="https://www.mapbox.com/"
+      <div class="text-center p-3 couleur">
+                <a class="text-light" href="https://www.mapbox.com/"
           >API</a
         >
-        <a class="text-dark" href="https://github.com/KMinetto/Ouerise"
+        <a class="text-light" href="https://github.com/KMinetto/Ouerise"
           >GitHub</a
         >
       </div>

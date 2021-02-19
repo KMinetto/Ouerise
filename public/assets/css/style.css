@@ -10,6 +10,11 @@ nav {
     background-color: #C49D83;
 }
 
+.couleur {
+    background-color: #C49D83;
+}
+
+
 button {
     color: #B0B9AA !important;
     border-color: #B0B9AA !important;
@@ -49,37 +54,44 @@ h3 {
     color: white;
 }
 
-.dim{
+.dim {
     width: 300px;
     height: auto;
     border: 2px solid white !important;
-
 }
 
 @media(max-width: 1000px) {
-    nav
-    {
+    nav {
         width: auto;
         text-align: left;
     }
-
     .logo {
         position: fixed;
-        margin-bottom:10%;
+        margin-bottom: 10%;
     }
-
-    .rectangle{
+    .rectangle {
         width: auto;
         height: auto;
     }
-    
-    .dim{
-        
-    }
-
-    .texte{
+    .dim {}
+    .texte {
         width: auto;
         height: auto;
     }
-    
+}
+
+
+#main {
+    max-width: 1280px;
+    min-height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+    height: 50px;
 }
