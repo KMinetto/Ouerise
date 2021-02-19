@@ -2,19 +2,19 @@
   <div>
     <section class="container">
       <div class="row">
-        <div class="p-5 rectangle" v-for="prop in props"> <!-- TODO: Ne connait pas la variables props -->
+        <div class="p-5 rectangle" v-for="location in locations"> <!-- TODO: Ne connait pas la variables props -->
           <div class="texte">
             <div class="col-12 d-flex">
               <div class="col-9">
-                <h3>{{ prop.name }}</h3>
-                <p>{{ prop.desc }}</p>
+                <h3>{{ location.name }}</h3>
+                <p></p>
               </div>
               <div class="col-3">
-                <img
-                  class="img-fluid dim ms-4"
-                  src="/assets/img/{{ prop.img }}"
-                  alt="Image du lieu"
-                />  <!-- TODO: Trouver un moyen de mettre la route vers l'image -->
+<!--                <img-->
+<!--                  class="img-fluid dim ms-4"-->
+<!--                  :src="'/assets/img/' + location.img"-->
+<!--                  alt="Image du lieu"-->
+<!--                />-->
               </div>
             </div>
           </div>
@@ -29,7 +29,7 @@ export default {
   name: "Home",
 
   props: [
-      'name',
+      'names',
       'desc',
       'img'
   ],
@@ -37,21 +37,30 @@ export default {
   data() {
     return {
       message: "Je suis le nom dun lieu",
+        locations: [],
     };
   },
 
   mounted() {
-    console.log("test");
-    console.log(this.name) // S'affiche
-    console.log(this.desc) // S'affiche
-    console.log(this.img) // S'affiche
     this.test();
   },
+
+    created() {
+      this.fetchInfos()
+    },
 
   methods: {
     test() {
       this.message = "Je suis un nouveau paragraphe";
     },
+    fetchInfos() {
+        fetch("/index_json")
+            .then(res => res.json())
+            .then(res => {
+                console.log(res.datas);
+                this.locations = res.datas
+            })
+    }
   },
 };
 </script>
