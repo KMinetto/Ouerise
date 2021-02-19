@@ -2,7 +2,7 @@
   <div>
     <section class="container">
       <div class="row">
-        <div class="p-5 rectangle" v-for="prop in props">
+        <div class="p-5 rectangle" v-for="prop in props" :key="prop">
           <div class="texte">
             <div class="col-12 d-flex">
               <div class="col-9">

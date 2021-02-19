@@ -30,6 +30,7 @@ new Vue({
     render(h) {
         return h(Home, {
             props: {
+                prop: []= locations,
                 name: this.$el.getAttribute('name'),
                 desc: this.$el.getAttribute('desc'),
                 img: this.$el.getAttribute('img'),
@@ -60,7 +61,8 @@ new Vue({
     render(h) {
         return h(Location, {
             props: {
-                latitude: this.$el.getAttribute('latitude')
+                latitude: this.$el.getAttribute('latitude'),
+                longitude : this.$el.getAttribute('longitude')
             }
         })
     },
@@ -79,7 +81,8 @@ new Vue({
     render(h) {
         return h(Map, {
             props: {
-                latitude: this.$el.getAttribute('latitude-map')
+                latitude: this.$el.getAttribute('latitude-map'),
+                longitude: this.$el.getAttribute('longitude-map')
             }
         })
     },

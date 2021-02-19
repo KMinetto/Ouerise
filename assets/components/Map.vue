@@ -9,7 +9,7 @@
 <script>
 export default {
   name: "Map",
-    props: ['latitude'],
+    props: ['latitude', 'longitude'],
   data() {
     return {
       map: null,
@@ -19,14 +19,15 @@ export default {
   },
 
   mounted() {
-    console.log("Depuis map : " + this.latitude)
+    
+    console.log("Depuis map : " + this.latitude + this.longitude)
     this.initMap();
     // this.initLayers();
   },
 
   methods: {
     initMap() {
-      this.map = L.map("mapping").setView([49.1056, 3.2636], 13);
+      this.map = L.map("mapping").setView([this.latitude, this.longitude], 13);
       this.tileLayer = L.tileLayer(
         'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
         {
