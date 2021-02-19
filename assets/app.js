@@ -16,7 +16,6 @@ import Vue from 'vue';
 import Home from './components/Home'
 import Location from './components/Location'
 import Map from './components/Map'
-
 import Nav from './components/Nav'
 
 // new Vue({
@@ -61,7 +60,8 @@ new Vue({
         return h(Location, {
             props: {
                 latitude: this.$el.getAttribute('latitude'),
-                longitude : this.$el.getAttribute('longitude')
+                longitude : this.$el.getAttribute('longitude'),
+                names : this.$el.getAttribute('names'),
             }
         })
     },
