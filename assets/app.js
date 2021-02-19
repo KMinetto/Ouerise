@@ -16,8 +16,9 @@ import Vue from 'vue';
 import Home from './components/Home'
 import Location from './components/Location'
 import Map from './components/Map'
-
 import Nav from './components/Nav'
+import Footer from './components/Footer'
+
 
 // new Vue({
 //     el: '#app',
@@ -39,6 +40,8 @@ new Vue({
     template: '<Home/>'
 }).$mount('#app')
 
+
+// Affichage de NavBar
 
 new Vue({
     el: '#nav',
@@ -87,4 +90,12 @@ new Vue({
         })
     },
     template: '<Map/>'
-}).$mount('#map')
+})
+
+// Affichage du footer
+new Vue({
+    el: '#footer',
+    components: {Footer},
+
+    template: '<Footer/>'
+})
