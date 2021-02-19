@@ -33,10 +33,8 @@
 <script>
 export default {
     name: 'Location',
-    props: [
-        'latitude',
-        'longitude'
-    ],
+
+    props: ['latitude', 'longitude'],
     data(){
         return {
             message: ''
@@ -44,8 +42,7 @@ export default {
     },
 
     mounted(){
-        console.log(this.latitude);
-        console.log(this.longitude);
+        console.log(this.latitude, this.longitude);
         this.test();
     },
 
