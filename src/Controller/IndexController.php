@@ -11,11 +11,32 @@ class IndexController extends AbstractController
 {
     /**
      * @Route("/", name="index")
+     * @param CallApi $callApiServices
      * @return Response
      */
-    public function index(): Response
+    public function index(CallApi $callApiServices): Response
     {
-        return $this->render('index/index.html.twig');
+        $locations = $this->getDoctrine()->getRepository('App:Location')
+            ->findAll();
+        $names = 'Nom-inconnue';
+        $description = 'Description-inconnue';
+        $img = 'Image-inconnue.jpg';
+
+//        foreach ($locations as $location) {
+//            $names[] = $callApiServices->getApiLocation($location->getName());
+//        }
+
+//        foreach ($locations as $location) {
+//            $datas[] = $callApiServices->getApiLocation($location->getName());
+//            $datas[] = $callApiServices->getApiLocation($location->getLatitude());
+//            $datas[] = $callApiServices->getApiLocation($location->getLongitude());
+//        }
+
+        return $this->render('index/index.html.twig', [
+            'name' => $names,
+            'desc' => $description,
+            'img' => $img,
+            'locations' => $locations,
+        ]);
     }
 }
-    
