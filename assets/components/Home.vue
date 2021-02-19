@@ -2,7 +2,7 @@
   <div>
     <section class="container">
       <div class="row">
-        <div class="p-5 rectangle" v-for="prop in props">
+        <div class="p-5 rectangle" v-for="prop in props"> <!-- TODO: Ne connait pas la variables props -->
           <div class="texte">
             <div class="col-12 d-flex">
               <div class="col-9">
@@ -12,9 +12,9 @@
               <div class="col-3">
                 <img
                   class="img-fluid dim ms-4"
-                  src="/assets/img/" + {{prop.img}}
+                  src="/assets/img/{{ prop.img }}"
                   alt="Image du lieu"
-                />
+                />  <!-- TODO: Trouver un moyen de mettre la route vers l'image -->
               </div>
             </div>
           </div>
@@ -28,7 +28,11 @@
 export default {
   name: "Home",
 
-  props: ['name','desc', 'img'],
+  props: [
+      'name',
+      'desc',
+      'img'
+  ],
 
   data() {
     return {
@@ -38,6 +42,9 @@ export default {
 
   mounted() {
     console.log("test");
+    console.log(this.name) // S'affiche
+    console.log(this.desc) // S'affiche
+    console.log(this.img) // S'affiche
     this.test();
   },
 

@@ -18,16 +18,24 @@ class IndexController extends AbstractController
     {
         $locations = $this->getDoctrine()->getRepository('App:Location')
             ->findAll();
-        $datas = [];
+        $names = 'Nom-inconnue';
+        $description = 'Description-inconnue';
+        $img = 'Image-inconnue.jpg';
 
-        foreach ($locations as $location) {
-            $datas[] = $callApiServices->getApiLocation($location->getName());
-            $datas[] = $callApiServices->getApiLocation($location->getLatitude());
-            $datas[] = $callApiServices->getApiLocation($location->getLongitude());
-        }
+//        foreach ($locations as $location) {
+//            $names[] = $callApiServices->getApiLocation($location->getName());
+//        }
+
+//        foreach ($locations as $location) {
+//            $datas[] = $callApiServices->getApiLocation($location->getName());
+//            $datas[] = $callApiServices->getApiLocation($location->getLatitude());
+//            $datas[] = $callApiServices->getApiLocation($location->getLongitude());
+//        }
 
         return $this->render('index/index.html.twig', [
-            'datas' => $datas,
+            'name' => $names,
+            'desc' => $description,
+            'img' => $img,
             'locations' => $locations,
         ]);
     }
