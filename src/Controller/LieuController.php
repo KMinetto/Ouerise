@@ -23,6 +23,8 @@ class LieuController extends AbstractController
         $location = $this->getOneLocation($id);
         $latitude = $this->getOneLocationLatitude($id);
         $longitude = $this->getOneLocationLongitude($id);
+
+        // TODO: Faire le JsonResponse et le renvoyer en fetch
         return $this->render('lieu/index.html.twig', [
             'data' => $callApiServices->getApiLocation($location),
             'latitude' => $latitude,

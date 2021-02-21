@@ -34,12 +34,11 @@ class IndexController extends AbstractController
 
         foreach ($locations as $location) {
             $datas[] = array(
+                'id' => $location->getId(),
                 'name' => $location->getName(),
                 'description' => $location->getDescription(),
                 'img' => $location->getImg(),
             );
-//            $description = $location->getDescription();
-//            $img = $location->getImg();
         }
 
         $response->setData([
