@@ -31,6 +31,7 @@
 </template>
 
 <script>
+// TODO: Faire le fetch pour récupérer les données depuis le controller
 export default {
     name: 'Location',
 
