@@ -72,8 +72,8 @@
       <option name="myValues">
         <value>
           <list size="3">
-            <item index="0" class="java.lang.String" itemvalue="name" />
-            <item index="1" class="java.lang.String" itemvalue="img" />
+            <item index="0" class="java.lang.String" itemvalue="longitude" />
+            <item index="1" class="java.lang.String" itemvalue="latitude" />
             <item index="2" class="java.lang.String" itemvalue="idlocation" />
           </list>
         </value>

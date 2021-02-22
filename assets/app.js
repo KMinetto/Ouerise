@@ -17,7 +17,6 @@ import Home from './components/Home'
 import Location from './components/Location'
 import Map from './components/Map'
 import Nav from './components/Nav'
-import Footer from './components/Footer'
 
 
 // new Vue({
@@ -65,9 +64,9 @@ new Vue({
     render(h) {
         return h(Location, {
             props: {
-                idLocation: this.$el.getAttribute('idLocation'),
                 latitude: this.$el.getAttribute('latitude'),
-                longitude: this.$el.getAttribute('longitude')
+                longitude: this.$el.getAttribute('longitude'),
+                idLocation: this.$el.getAttribute('idLocation')
             }
         })
     },
@@ -94,12 +93,3 @@ new Vue({
     template: '<Map/>'
 }).$mount('#map')
 
-// Affichage du footer
-new Vue({
-    el: '#footer',
-    components: {
-        Footer
-    },
-
-    template: '<Footer/>'
-})

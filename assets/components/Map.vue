@@ -1,6 +1,6 @@
 <template>
-  <div class="col-sm-5 offset-1 card">
-    <div id="mapping" class="map"></div>
+  <div class="col-sm-5 offset-1 mt-5">
+    <div  id="mapping" class="map mt-5"></div>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 <script>
 export default {
   name: "Map",
-  props: ["latitude", "longitude"],
+  props: ["idLocation", "latitude", "longitude"],
   data() {
     return {
       map: null,
@@ -19,14 +19,14 @@ export default {
   },
 
   mounted() {
-    console.log("Depuis map : " + this.latitude + this.longitude);
+    console.log("Depuis map : " + this.latitude + this.longitude, console.log(this.idLocation));
     this.initMap();
   },
 
     methods: {
         initMap() {
-          this.map = L.map("mapping").setView([45.256259, 5.028491], 13);
-          this.marker = L.marker([45.256259, 5.028491]).addTo(this.map);
+          this.map = L.map("mapping").setView([this.latitude, this.longitude], 13);
+          this.marker = L.marker([this.latitude, this.longitude]).addTo(this.map);
           this.tileLayer = L.tileLayer(
             "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
             {
