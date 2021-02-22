@@ -3,9 +3,7 @@
     <footer class="text-center text-lg-start">
       <div class="text-center p-3 couleur">
         <a class="text-light" href="https://www.mapbox.com/">API</a>
-        <a class="text-light" href="https://github.com/KMinetto/Ouerise"
-          >GitHub</a
-        >
+        <a class="text-light" href="https://github.com/KMinetto/Ouerise">GitHub</a>
       </div>
     </footer>
   </div>
@@ -14,26 +12,15 @@
 <script>
 export default {
   name: "Footer",
-  data() {
-    return {
-      message: "",
-    };
-  },
 
-  mounted() {
-    console.log("testFooter");
-    this.test();
-  },
+  data() { return { } },
 
-  methods: {
-    test() {
-      this.message = "";
-    },
-  },
+  mounted() { },
+
+  methods: { },
 };
 </script>
 
-<style>
-</style>
+<style></style>
 
 

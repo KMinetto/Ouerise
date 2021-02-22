@@ -2,10 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Location;
 use App\Service\CallApi;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,29 +13,61 @@ class LieuController extends AbstractController
 
     /**
      * @Route("/lieu/{id}", name="lieu", requirements={"id"="\d+"})
-     * @param CallApi $callApiServices
-     * @param int $id
+     * @param $id
      * @return Response
      */
-    public function index(CallApi $callApiServices, int $id): Response
+    public function index($id): Response
     {
-        $location = $this->getOneLocation($id);
         $latitude = $this->getOneLocationLatitude($id);
         $longitude = $this->getOneLocationLongitude($id);
 
-        // TODO: Faire le JsonResponse et le renvoyer en fetch
-        return $this->render('lieu/index.html.twig', [
-            'data' => $callApiServices->getApiLocation($location),
+        return new Response($this->renderView('lieu/index.html.twig', [
+            'id' => $id,
             'latitude' => $latitude,
             'longitude' => $longitude
-        ]);
+        ]));
     }
 
-    public function getOneLocation($id): ?string
-    {
-        $location = $this->getDoctrine()
+    private function getDataSource($id) {
+
+        return $this->getDoctrine()
             ->getRepository('App:Location')
             ->find($id);
+    }
+
+    /**
+     * @Route ("/lieu/{id}_json", name="lieu_json")
+     * @param $id
+     */
+    public function getLocation($id) : JsonResponse {
+
+        $response = new JsonResponse();
+
+        $data = [];
+
+        $name = $this->getOneLocation($id);
+        $latitude = $this->getOneLocationLatitude($id);
+        $longitude = $this->getOneLocationLongitude($id);
+        $img = $this->getOneLocationImg($id);
+
+        $data[] = array(
+            'name' => $name,
+            'latitude' => $latitude,
+            'longitude' => $longitude,
+            'img' => $img
+        );
+
+        $response->setData([
+            'data' => $data
+        ]);
+
+        return $response;
+
+    }
+
+    private function getOneLocation($id): ?string
+    {
+        $location = $this->getDataSource($id);
 
         if (!$location) {
             throw $this->createNotFoundException('Aucun lieu n\'a été trouvé :cry:');
@@ -45,12 +76,9 @@ class LieuController extends AbstractController
         return $location->getName();
     }
 
-
-    public function getOneLocationLatitude($id): ?string
+    private function getOneLocationLatitude($id): ?string
     {
-        $location = $this->getDoctrine()
-            ->getRepository('App:Location')
-            ->find($id);
+        $location = $this->getDataSource($id);
 
         if (!$location) {
             throw $this->createNotFoundException('Aucun lieu n\'a été trouvé :cry:');
@@ -59,17 +87,26 @@ class LieuController extends AbstractController
         return $location->getLatitude();
     }
 
-    public function getOneLocationLongitude($id): ?string
+    private function getOneLocationLongitude($id): ?string
     {
-        $location = $this->getDoctrine()
-            ->getRepository('App:Location')
-            ->find($id);
+        $location = $this->getDataSource($id);
 
         if (!$location) {
             throw $this->createNotFoundException('Aucun lieu n\'a été trouvé :cry:');
         }
 
         return $location->getLongitude();
+    }
+
+    private function getOneLocationImg($id): ?string
+    {
+        $location = $this->getDataSource($id);
+
+        if (!$location) {
+            throw $this->createNotFoundException('Aucun lieu n\'a été trouvé :cry:');
+        }
+
+        return $location->getImg();
     }
 
 

@@ -32,29 +32,17 @@
 export default {
     name: "Home",
 
+    data() { return { locations: [] }; },
 
-    data() {
-        return {
-            locations: [],
-        };
-    },
-
-
-    created() {
-        this.fetchInfos()
-    },
+    created() { this.fetchInfos() },
 
     methods: {
-        test() {
-            this.message = "Je suis un nouveau paragraphe";
-        },
         fetchInfos() {
             fetch("/index_json")
                 .then(res => res.json())
                 .then(res => {
-                    console.log(res.datas);
                     this.locations = res.datas
-            })
+                })
         }
     },
 };
