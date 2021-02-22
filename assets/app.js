@@ -45,7 +45,9 @@ new Vue({
 
 new Vue({
     el: '#nav',
-    components: { Nav },
+    components: {
+        Nav
+    },
 
     template: '<Nav/>'
 });
@@ -63,7 +65,9 @@ new Vue({
     render(h) {
         return h(Location, {
             props: {
-                idLocation: this.$el.getAttribute('idLocation')
+                idLocation: this.$el.getAttribute('idLocation'),
+                latitude: this.$el.getAttribute('latitude'),
+                longitude: this.$el.getAttribute('longitude')
             }
         })
     },
@@ -83,8 +87,7 @@ new Vue({
         return h(Map, {
             props: {
                 latitude: this.$el.getAttribute('latitude-map'),
-                longitude: this.$el.getAttribute('longitude-map'),
-                idLocation: this.$el.getAttribute('idLocation')
+                longitude: this.$el.getAttribute('longitude-map')
             }
         })
     },
@@ -94,7 +97,9 @@ new Vue({
 // Affichage du footer
 new Vue({
     el: '#footer',
-    components: {Footer},
+    components: {
+        Footer
+    },
 
     template: '<Footer/>'
 })

@@ -25,8 +25,8 @@ export default {
 
     methods: {
         initMap() {
-          this.map = L.map("mapping").setView([this.latitude, this.longitude], 13);
-          this.marker = L.marker([this.latitude, this.longitude]).addTo(this.map);
+          this.map = L.map("mapping").setView([45.256259, 5.028491], 13);
+          this.marker = L.marker([45.256259, 5.028491]).addTo(this.map);
           this.tileLayer = L.tileLayer(
             "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
             {

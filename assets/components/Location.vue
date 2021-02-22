@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="container">
-		<div class="row" v-for="data of location">
+		<div class="row" v-for="data of location" :key="data.id">
 
 			<h2> {{ data.name }} </h2>
 
@@ -40,9 +40,10 @@ export default {
 
     data() { return { location: [] } },
 
-    mounted() {},
+    mounted() { console.log(this.latitude + this.longitude)},
 
-    created() { this.fetchInfos() },
+    created() { this.fetchInfos()
+				console.log(this.location) },
 
     methods: {
         fetchInfos() {
