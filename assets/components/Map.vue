@@ -8,7 +8,7 @@
 <script>
 export default {
   name: "Map",
-  props: ["latitude", "longitude"],
+  props: ["idLocation", "latitude", "longitude"],
   data() {
     return {
       map: null,
@@ -19,7 +19,7 @@ export default {
   },
 
   mounted() {
-    console.log("Depuis map : " + this.latitude + this.longitude);
+    console.log("Depuis map : " + this.latitude + this.longitude, console.log(this.idLocation));
     this.initMap();
   },
 
