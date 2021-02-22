@@ -1,27 +1,29 @@
 <template>
 <div>
     <div class="container">
-		<div class="row" v-for="data of location">
+		<div class="row d-flex" > <!-- v-for="data of location" -->
 
-			<h2> {{ data.name }} </h2>
+			<div class="col-sm-6" v-for="data of location">
+                <h2> {{ data.name }} </h2>
 
-			<div class="col-sm-6 card mb-3">
-				<img :src="'/assets/img/' + data.img " class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title"> {{ data.name }} </h5>
-					<hr>
-					<h5>Coordonées géographiques</h5>
+                <div class=" card ">
+                    <img :src="'/assets/img/' + data.img " class="card-img-top" :alt="'Image de : ' + data.name ">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ data.name }}  </h5>
+                        <hr>
+                        <h5>Coordonées géographiques</h5>
 
-					<p class="card-text">
-                        Longitude : {{ data.longitude }}
-					</p>
-					<p class="card-text">
-                        Latitude : {{ data.latitude }}
-					</p>
-				</div>
-			</div>
+                        <p class="card-text">
+                            Longitude : {{ data.longitude }}
+                        </p>
+                        <p class="card-text">
+                            Latitude : {{ data.latitude }}
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-			<div id="map" class="col-sm-5 offset-1 card" v-bind:latitude-map="latitude" v-bind:longitude-map="longitude"></div>
+			<div id="map" class="col-sm-5 offset-1 card mt-3" v-bind:latitude-map="latitude" v-bind:longitude-map="longitude"></div>
 		</div>
 	</div>
 </div>
@@ -38,9 +40,10 @@ export default {
         "idLocation"
     ],
 
+    //
     data() { return { location: [] } },
 
-    mounted() {},
+    mounted() {  },
 
     created() { this.fetchInfos() },
 
