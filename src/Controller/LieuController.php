@@ -13,11 +13,19 @@ class LieuController extends AbstractController
 
     /**
      * @Route("/lieu/{id}", name="lieu", requirements={"id"="\d+"})
+     * @param $id
      * @return Response
      */
     public function index($id): Response
     {
-        return $this->render('lieu/index.html.twig');
+        $latitude = $this->getOneLocationLatitude($id);
+        $longitude = $this->getOneLocationLongitude($id);
+
+        return new Response($this->renderView('lieu/index.html.twig', [
+            'id' => $id,
+            'latitude' => $latitude,
+            'longitude' => $longitude
+        ]));
     }
 
     private function getDataSource($id) {
